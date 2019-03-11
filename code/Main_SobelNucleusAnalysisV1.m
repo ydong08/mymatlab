@@ -9,20 +9,20 @@
 %CORE ALGORITHM	2
 %RESULTS OUTPUT	4
 %ABOUT
-%These are the required inputs for the algorithm.
-%Image files must be saved as 8 bit .tif files in either RGB or grey   values.
-%Each image must only contain 1 nuclei on a black background.
-%All images should be placed in the working directory with the Matlab   file and associated functions. The code will cycle through all images   in folder.
-%Associated functions required: ThreshMode.m, ApplyThresh.m,   ExtractImage.m, GeneratingPrintName.m, GeneratingPrint.m,
-%This code has been optimised for 512x512 pixel confocal image slides   taken through the central plane of a Hoechst 33342 or DAPI stained   nucleus using a x40 or x63 oil objective with a zoom to approx 50nm x-y   voxel size. However, it could be adjusted for other image types.
+%These are the required inputs for the algorithm.
+%Image files must be saved as 8 bit .tif files in either RGB or grey   values.
+%Each image must only contain 1 nuclei on a black background.
+%All images should be placed in the working directory with the Matlab   file and associated functions. The code will cycle through all images   in folder.
+%Associated functions required: ThreshMode.m, ApplyThresh.m,   ExtractImage.m, GeneratingPrintName.m, GeneratingPrint.m,
+%This code has been optimised for 512x512 pixel confocal image slides   taken through the central plane of a Hoechst 33342 or DAPI stained   nucleus using a x40 or x63 oil objective with a zoom to approx 50nm x-y   voxel size. However, it could be adjusted for other image types.
 %VARIABLE DETAILS
-%XLfilename: The name given to the EXCEL file to be produced, this will   contain the area, edge count and edge density from each image.
-%filenames: This will search the folder for the image type specified.
-%PixRedFaxtor: Image reduction factor. Set to 4. Increase to 8 if using   1026x1026 images, or reduce if using smaller images. This affects the   sensitivity of the edge finding algorithm and the magnitude of the   final edge density value.
-%SobelThresh: The threshold value for the SOBEL edge detection. This   affects the sensitivity of the edge finding algorithm and can be   optomised for your image type.
+%XLfilename: The name given to the EXCEL file to be produced, this will   contain the area, edge count and edge density from each image.
+%filenames: This will search the folder for the image type specified.
+%PixRedFaxtor: Image reduction factor. Set to 4. Increase to 8 if using   1026x1026 images, or reduce if using smaller images. This affects the   sensitivity of the edge finding algorithm and the magnitude of the   final edge density value.
+%SobelThresh: The threshold value for the SOBEL edge detection. This   affects the sensitivity of the edge finding algorithm and can be   optomised for your image type.
 %IMAGE ANALYSIS STEP OUTPUT
-%Images can be output and saved for each step of the procedure.
-%If you want to print out an image matrix, use the value 1. If not   required, use the value 0.
+%Images can be output and saved for each step of the procedure.
+%If you want to print out an image matrix, use the value 1. If not   required, use the value 0.
 %I  = original image I2 = original image smoothed by mean filter (6x) I3 = image of pixels that above the threshold (T) I4 = image of pixels that above the threshold with the holes filled I5 = image of the thresholded nucleus in black background plus intensity      redistributed I6 = downsampled I5 into 128x128 (by a factor of 4) I7 = SOBEL image (logical) A1 = SOBEL image (uint8) I8 = image of pixels that above the threshold from 128x128 image (I6) I9 = image of pixels that above the threshold from 128x128 image with the      holes filled I10 = the inner part of the nucleus (Region of Interest or ROI) I11 = perimeter of the ROI I12 = image of the SOBEL edge within the ROI I13 = image of the SOBEL edge within the ROI (I12) plus the perimeter of       previous ROI (I11)
 %INPUT VARIABLES
 %Variables described above for editing.
