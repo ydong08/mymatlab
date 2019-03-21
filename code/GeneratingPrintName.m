@@ -1,3 +1,7 @@
+
+
+
+
 function [PrintNameList] = GeneratingPrintName(PrintIndex,s)
 % This function receives an Index, which indicates the chosen image
 % matrices, and the number of images being processed.
@@ -5,7 +9,8 @@ function [PrintNameList] = GeneratingPrintName(PrintIndex,s)
 % PrintIndex:    The index of chosen matrices (m x 1)
 % s:             The number of images being processed (1 x 1)
 
-Index = find(PrintIndex>0);
+% return sequence number that element more than 0 in matrices
+Index = find(PrintIndex>0); 
 Cond = isempty(Index);
 if Cond == 0
     for i = 1:size(Index,1)
@@ -45,6 +50,9 @@ if Cond == 0
 else
     PrintNameList = 'NO PRINT CHOSEN';
 end
+
+
+
 %Not enough input arguments.
 %
 %Error in GeneratingPrintName (line 8)

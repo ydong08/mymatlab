@@ -1,3 +1,5 @@
+
+
 function [IExtract] = ExtractImage(I,In)
 % This function receives the image to be extracted to a black background
 % and the thresholded image (having the pixels locating where the target

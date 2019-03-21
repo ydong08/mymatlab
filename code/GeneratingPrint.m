@@ -42,6 +42,7 @@ if Cond == 0
 else
     PrintList = 0;
 end
+
 %Not enough input arguments.
 %
 %Error in GeneratingPrint (line 8)

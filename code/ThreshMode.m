@@ -46,6 +46,7 @@ for j = 2:MaxInt
     Thresh = j-1;
   end
 end
+
 %Not enough input arguments.
 %
 %Error in ThreshMode (line 4)
